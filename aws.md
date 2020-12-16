@@ -88,14 +88,14 @@
     - <p style='text-align: justify;'>Cada nombre de dominio usa DNS para controlar cómo encuentran tu sitio web los visitantes y cómo recibes correo electrónico. Puedes considerar al nombre de dominio como una dirección física y el DNS actúa como tu GPS.</p>
 
 - Indica cuales son y para qué se usan los diferentes tipos de registros DNS.
-Los tipos de registros más utilizados son (10):
+Los tipos de registros más utilizados son: (12)
 
     - **A** = Dirección (address). Este registro se usa para traducir nombres de servidores de alojamiento a direcciones IPv4.
 
     - **AAAA** = Dirección (address). Este registro se usa en IPv6 para traducir nombres de hosts a direcciones IPv6.
 
     - **<p style='text-align: justify;'>TXT** = Puedes rellenarlos con cualquier texto que desees. Los usos más habituales de los registros TXT son verificar la propiedad del dominio y evitar el uso indebido del correo electrónico.</p>
-    
+
     - **<p style='text-align: justify;'>CNAME** = Nombre canónico (canonical Name). Se usa para crear nombres de servidores de alojamiento adicionales, o alias, para los servidores de alojamiento de un dominio. Es usado cuando se están corriendo múltiples servicios (como FTP y servidor web) en un servidor con una sola dirección IP. Cada servicio tiene su propia entrada de DNS (como ftp.ejemplo.com. y www.ejemplo.com.). Esto también es usado cuando corres múltiples servidores HTTP, con diferentes nombres, sobre el mismo host. Se escribe primero el alias y luego el nombre real. Ej. Ejemplo1 IN CNAME ejemplo2</p>
 
     - **<p style='text-align: justify;'>NS** = Servidor de nombres (name server). Define la asociación que existe entre un nombre de dominio y los servidores de nombres que almacenan la información de dicho dominio. Cada dominio se puede asociar a una cantidad cualquiera de servidores de nombres.</p>
@@ -109,6 +109,8 @@ Los tipos de registros más utilizados son (10):
     - **SRV** = Service record (SRV record).
 
     - **<p style='text-align: justify;'>ANY** = Toda la información de todos los tipos que exista. (No es un tipo de registro, sino un tipo de consulta)</p>
+    - **<p style='text-align: justify;'>SPF**: o Convenio de Remitentes, del inglés Sender Policy Framework. Es una protección contra la falsificación de direcciones en el envío de correo electrónico. Identifica, a través de los registros de nombres de dominio (DNS), a los servidores de correo SMTP autorizados para el transporte de los mensajes.
+    - **<p style='text-align: justify;'>CAA**: es un mecanismo de autorización para entidades certificadoras. Funciona de forma que únicamente la entidad que indiques en el registro CAA podrá emitir certificados para tu dominio o subdominio. Su uso tiene fines restrictivos.
 
 - Imagen los registros DNS de tu sitio en Guebs y explicación de los registros de tu dominio grupo1.zerbitzaria.net.
     >Entramos en nuestro cPanel: http://cpanel.grupo1.zerbitzaria.net/ En la parte de dominios, Zone Editor.
