@@ -122,6 +122,54 @@ Los tipos de registros más utilizados son: (12)
     - El segundo el correo electrónico.
     - El tercero puede usarse para evitar el uso indevido del correo electrónico.
     ![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/38.png)
+- - -
+# <center> DNS </center> #
+
+## 1. ¿Cuántos servidores DNS existen?
+> En la actualidad existen un total de 13 servidores raíz DNS, y están nombrados por letras de la “A” a la “M”. Estos servidores, tienen una dirección IPv4 y una dirección IPv6.
+![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/41.png)
+
+
+## 2. ¿Cuántas redirecciones DNS son posibles?
+>Una redirección ->www es una regla en tu servidor web que transmite todo el tráfico de la versión web sin www de tu dominio a la versión con www, o viceversa.
+Este tipo de redirecciones se pueden realizar manualmente añadiendo un código como el siguiente en el archivo .htaccess:
+RewriteEngine On RewriteCond %{HTTP_HOST} ^viejodominio.com$ [OR] RewriteCond %{HTTP_HOST} ^www.viejodominio.com$ RewriteRule (.*)$ http://www.nuevodominio.com/$1 [R=301,L]  
+> Hay dos tipos de redirecciones:
+- Opción 1: Redirección 301 Permanente que notificará al navegador del visitante para actualizar sus registros.
+- Opción 2: Redirección 302 Temporal que no actualizará marcadores del visitante.
+
+## 3. ¿Qué son los servidores DNS Raíz?
+>Lo primero que debemos saber es que cuando intentamos acceder a un servicio online de cualquier índole (correo electrónico, sitio web, etc.) los servidores DNS que controlan todo, más conocidos como **Root Name Servers** o **DNS Root Servers**, son los que gestionan las peticiones de traducción de un nombre de dominio a una dirección IP. Sin estos servidores, los usuarios deberán recordar la IP de todos los sitios web. Su funcionamiento de forma muy resumida es el siguiente:
+![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/42.png)
+
+>El usuario introduce una dirección web en el navegador, el navegador consulta primero con el host del equipo, si no hay información, consulta con el servidor DNS que tiene especificado el equipo, si este no tiene información, va subiendo de servidor DNS a servidor DNS hasta llegar a los servidores Root, que son los principales y están en lo alto de la cadena de «mando».
+
+## 4. ¿Para qué montar un servidor si simplemente escribiendo en un fichero la relación IP/Nombre el sistema ya funcionaría?
+> Por que hay millones de IP y nombres web en el mundo, sería un caos si cada uno lo hace de una forma diferente. De esta manera centralizas la información, creas un protocolo para que todas las personas tengan que seguirlo y así sea global. Todo el mundo pueda acceder y crear webs con ese formato.
+
+> Es más rapido y más sencillo para el usuario.
+
+## 5. Según lo expuesto, y si en tu configuración de red del sistema operativo solamente posees un servidor DNS, entonces: ¿cuál sería el proceso para encontrar la IP de la dirección web: http://www.debian.org/distrib/netinst?
+>Cuando se introduce la dirección de una página web (URL) en el campo de búsqueda del navegador, este realiza una petición al llamado resolver, un componente especial del sistema operativo cuya función consiste en almacenar en caché direcciones IP ya solicitadas anteriormente, y proporcionarlas cuando la aplicación cliente (navegador, programa de correo) la solicita. Si la dirección IP solicitada no se encuentra en el caché del resolver, este redirige la petición al servidor DNS que corresponda, que, en general, se trata del servidor DNS del proveedor de Internet. Aquí se coteja la petición con la base de datos del DNS y, si está disponible, se envía la dirección IP correspondiente como respuesta (“forward lookup”). Esta permite al navegador del usuario dirigirse al servidor web deseado en Internet. Otra vía alternativa consiste en el camino inverso, es decir, en traducir la dirección IP en la dirección de dominio (“reverse lookup”).  
+![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/45.png)  
+>Si un servidor DNS no puede responder a una petición con la información de que dispone en su base de datos, puede solicitar la información a otro servidor o reenviar la petición al servidor DNS que corresponda. Esta resolución se puede realizar de dos formas:
+
+- **Resolución recursiva**: es la que se produce cuando el servidor DNS no puede responder por sí mismo a una petición y toma la información de otro servidor. El resolver transfiere la petición completa a su servidor DNS, que proporciona a su vez la respuesta al resolver con el nombre de dominio, si se ha resuelto.
+- **Resolución iterativa**: cuando el servidor DNS no puede resolver la petición, envía como respuesta la dirección del siguiente servidor DNS de la jerarquía. El resolver tiene que enviar él mismo una nueva petición y repetir la maniobra hasta que se resuelve el nombre de dominio.
+La administración centralizada de la información de los dominios en el DNS se caracteriza por un índice elevado de fiabilidad y flexibilidad. Si la dirección IP de un servidor cambia, el usuario no suele percibir nada, ya que la dirección IP actual para el dominio correspondiente se guarda en la base de datos.
+
+## 6. ¿Es posible si dispones de una conexión a Internet con IP dinámica ofrecer servicios en Internet? Es decir, si quieres ofrecer los servicios SND, no dispones de IP estática, esto es, cada vez que te conectas a Internet tu IP, aunque a veces sea la misma, no siempre es la misma.
+>Por lo general, se requiere una dirección IP estática para que siempre se pueda acceder a un ordenador, una red doméstica o una red de una pequeña empresa a través de Internet con el mismo nombre de host. Esto también es necesario si desea conectarse a su red doméstica a través de VPN, por ejemplo. Sin embargo, si su red doméstica o la red de su negocio está conectada a Internet a través de una conexión DSL, se asigna regularmente una nueva dirección IP dinámica a la red. Como resultado, el ordenador, la red doméstica o la red de la empresa no pueden ser alcanzados permanentemente utilizando la dirección IP.  
+![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/44.png)  
+>En este caso, puede utilizar el Sistema DNS Dinámico (Dynamic Domain Name System) para cambiar automáticamente las direcciones IP que cambian constantemente en el registro DNS del dominio, de modo que su red doméstica esté permanentemente accesible bajo su dominio.
+
+>Para utilizar el DNS dinámico, puede utilizar el cliente multiplataforma de IONOS. Este cliente multiplataforma fue escrito en Python. 
+
+## 7. ¿Qué es ICANN?
+![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/43.jpg)
+>Internet Corporation for Assigned Names and Numbers (ICANN) es una organización sin fines de lucro que opera a nivel internacional, responsable de asignar espacio de direcciones numéricas de protocolo de Internet (IP), identificadores de protocolo y de las funciones de gestión [o administración] del sistema de nombres.
+>ICANN es una organización que opera a nivel multinacional/internacional y es la responsable de asignar las direcciones del protocolo IP, de los identificadores de protocolo, de las funciones de gestión del sistema de dominio y de la administración del sistema de servidores raíz.
+
 
 
 
