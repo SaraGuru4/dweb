@@ -75,7 +75,7 @@ principal?
 * Redirect:
     * Cuando se mueve una página web, se puede utilizar Redirect para crear asignaciones de la ubicación del archivo a un nuevo URL. El formato es como sigue:
 
-           ![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/60.png)
+        ![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/60.png)
     * En este ejemplo, sustituya <old-path> con la vieja información de la ruta por <file-name> y <current-domain> y <current-path> con el dominio actual y la información de la ruta para <file-name>.
 
     * En este ejemplo, cualquier petición <file-name> en la vieja ubicación será redirigida automáticamente a la nueva ubicación.
