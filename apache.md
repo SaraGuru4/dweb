@@ -1,9 +1,7 @@
 # <center>APACHE 2 </center> #
 ### Ficheros de configuración y directivas en Linux
 1. ¿Cuál es la ruta a los ficheros de configuración de apache?
-    * /usr/local/apache2/bin/
-    * /usr/local/apache2/conf/  
-    * /usr/local/apache2/conf/extra/
+    * /etc/apache2
 2. ¿Cuál es el fichero de configuración principal?
     * httpd.conf: Archivo de configuración principal del servidor HTTP Apache.
 3. ¿Que son las directivas "include" que aparecen en el fichero de configuración
@@ -21,7 +19,7 @@ principal?
     * Puede abrir y modificar este archivo en un editor de texto de su elección:
 6. ¿Cuál es el uso de las carpetas "sites-avaliable" y "sites-enabled"'?
     * De forma predeterminada en los sistemas Ubuntu, los archivos de configuración de Apache Virtual Hosts se almacenan en / etc / apache2 / sites - directorio disponible y se pueden habilitar creando enlaces simbólicos al directorio / etc / apache2 / sites - habilitado . ServerName: el dominio que debe coincidir con esta configuración de host virtual.
-    * con avaliable habilitas una página y con enabled deshabilitas una pagina.
+    * Con avaliable tienes las paginas posibles y con enabled habilitas una pagina.
 ### Define para que se utilizan las siguientes :
 * ServerRoot:
     * La directriz ServerRoot especifica el directorio de nivel superior que tiene el contenido web. Por defecto, ServerRoot está configurado a "/etc/httpd" para servidores seguros y no seguros.
