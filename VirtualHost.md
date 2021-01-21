@@ -30,8 +30,8 @@
 ![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/76.png)  
 >Después escribir la redirección:  
 ![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/77.png)
-- Ficheros log: apuntes.error.log y apuntes.access.log
-![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/78.png)
+- Ficheros log: apuntes.error.log y apuntes.access.log  
+>![Sin titulo](https://raw.githubusercontent.com/SaraGuru4/dweb/main/fotos/78.png)
 
 
 - - -
